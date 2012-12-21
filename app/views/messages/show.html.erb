@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @message.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @message.desc %>
+</p>
+
+<%=debug(@message)%>
+<%=debug(@message.project.pem)%>
+<%=debug(@message.project.token)%>
+
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %> |
+<%= link_to 'send', send_message_path(@message) %> |

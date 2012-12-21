@@ -1,0 +1,47 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :desc %><br />
+	<select name='pid'>
+	<% @projects.each do |project| %>
+	  <option value='<%= project.id %>'><%= project.name %></option>
+	<% end %>
+	</select>
+      
+  </div>
+
+  <div class="field">
+    <%= f.label :pem %><br />
+	<% @pems.each do |project| %>
+	  <input type="checkbox" name="pemids" checked="false" value='<%= project.id %>'><%= project.name %></input>
+	<% end %>
+      
+  </div>
+
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

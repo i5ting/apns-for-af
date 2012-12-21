@@ -1,0 +1,29 @@
+<h1>Listing pems</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Filepath</th>
+    <th>Desc</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pems.each do |pem| %>
+  <tr>
+    <td><%= pem.name %></td>
+    <td><%= pem.filepath %></td>
+    <td><%= pem.desc %></td>
+    <td><%= pem.project_id %></td>
+    <td><%= link_to 'Show', pem %></td>
+    <td><%= link_to 'Edit', edit_pem_path(pem) %></td>
+    <td><%= link_to 'Destroy', pem, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pem', new_pem_path %>

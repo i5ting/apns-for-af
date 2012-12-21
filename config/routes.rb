@@ -1,4 +1,14 @@
 Myapp::Application.routes.draw do
+  resources :messages
+
+  resources :pems
+
+  resources :tokens
+
+  resources :projects
+
+  resources :blogs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

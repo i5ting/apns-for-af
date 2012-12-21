@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pem.name %>
+</p>
+
+<p>
+  <b>Filepath:</b>
+  <%= @pem.filepath %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @pem.desc %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @pem.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_pem_path(@pem) %> |
+<%= link_to 'Back', pems_path %>

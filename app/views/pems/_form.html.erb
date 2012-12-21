@@ -1,0 +1,33 @@
+<%= form_for(@pem) do |f| %>
+  <% if @pem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pem.errors.count, "error") %> prohibited this pem from being saved:</h2>
+
+      <ul>
+      <% @pem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :filepath %><br />
+    <%= f.text_field :filepath %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.number_field :project_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
