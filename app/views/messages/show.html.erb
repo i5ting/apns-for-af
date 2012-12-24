@@ -16,5 +16,7 @@
 
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %> |
-<%= link_to 'send', send_message_path(@message) %> |
+<%= link_to 'Back', messages_path %> |--
+ 
+<%= link_to "Apns", :controller => "messages", :action => "apns", :id => @message %>
+ 
