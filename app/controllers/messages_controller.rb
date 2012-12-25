@@ -114,21 +114,21 @@ class MessagesController < ApplicationController
       APNS.host = 'gateway.sandbox.push.apple.com' 
       #gateway.sandbox.push.apple.com is default
 
-      APNS.pem  = '/Users/me/push/rapns/my.pem'
+      APNS.pem  = '/Users/sang/push/my.pem'
       # this is the file you just created
 
       APNS.port = 2195 
       # this is also the default. Shouldn't ever have to set this, but just in case Apple goes crazy, you can.
 
-      #device_token = '1c47f5a74714b28a00014684a64f02c7f60426e6c9a6ee6b068efddb57c9d6a9'
-      device_token = 'f96a71d53bbe3a5d077755f120002db9705289081d4d6b4fa8724441b4f331c2'
+      device_token = '1c47f5a74714b28a00014684a64f02c7f60426e6c9a6ee6b068efddb57c9d6a9'
+      #device_token = 'f96a71d53bbe3a5d077755f120002db9705289081d4d6b4fa8724441b4f331c2'
 
       #APNS.send_notification(device_token, 'Hello iPhone!' )
       #APNS.send_notification(device_token, :alert => 'Hello iPhone!', :badge => 1, :sound => 'default')
 
       APNS.send_notification(device_token, :alert => 'bahangye', :badge => 1, :sound => 'default', :other => {:hash => 'zlrltPL'})
 
-
+APNS.send_notification(device_token, :alert => 'renrenle', :badge => 1, :sound => 'default', :other => {:symbol => 'sz002336',:type => 2 })
 
     end
  
